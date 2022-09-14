@@ -2,8 +2,7 @@ class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
         int n=text1.length();
         int m=text2.length();
-        int[] prev=new int[m+1];
-        int[] cur=new int[m+1];
+       
         int[][] dp=new int[n+1][m+1];
         
         for(int i=0;i<=n;i++){
