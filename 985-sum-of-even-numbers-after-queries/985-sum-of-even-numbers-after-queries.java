@@ -12,30 +12,14 @@ class Solution {
         for(int j=0;j<m;j++){
             int val=queries[j][0];
             int ind=queries[j][1];
-            if(nums[ind]%2==0){
-                if((nums[ind]+val)%2==0){
-                sum+=val;
-                    nums[ind]+=val;
-                    arr[j]=sum;
-                }else{
-                    sum-=nums[ind];
-                    nums[ind]+=val;
-                    arr[j]=sum;
-                    
-                }
-            }else{
-                if((nums[ind]+val)%2==0){
-                sum+=nums[ind]+val;
-                    nums[ind]+=val;
-                    arr[j]=sum;
-                }else{
-                    
-                    nums[ind]+=val;
-                    arr[j]=sum;
-                    
-                }
+           if(nums[ind]%2==0) 
+               sum-=nums[ind];
+            nums[ind]+=val;
+            if(nums[ind]%2==0)
+                sum+=nums[ind];
+            
+            arr[j]=sum;
                 
-            }
         }
         return arr;
     }
