@@ -9,12 +9,12 @@ class Solution {
         String[] words = sentence.split(" ");
         
         for (String word : words) {
-            String prefix = "";
-            for (int i = 1; i <= word.length(); i++) {
-                prefix = word.substring(0, i);
-                if (set.contains(prefix)) break;
+            StringBuilder nb = new StringBuilder();
+            for (int i = 0; i < word.length(); i++) {
+               nb.append(word.charAt(i)) ;
+                if (set.contains(nb.toString())) break;
             }
-            sb.append(" " + prefix);
+            sb.append(" " + nb.toString());
         }
         
         return sb.deleteCharAt(0).toString();
