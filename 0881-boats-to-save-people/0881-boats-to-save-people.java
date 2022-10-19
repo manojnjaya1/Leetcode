@@ -7,10 +7,7 @@ class Solution {
         int j=n-1;
         int boats=0;
         while(i<=j){
-            if(people[j]==limit){
-                boats++;
-                j--;
-            }else if (people[j]+people[i]<=limit){
+            if (people[j]+people[i]<=limit){
                 boats++;
                 i++;
                 j--;
