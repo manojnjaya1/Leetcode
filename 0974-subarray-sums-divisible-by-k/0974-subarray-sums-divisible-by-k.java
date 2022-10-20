@@ -10,7 +10,7 @@ class Solution {
             sum=((sum+it)%k);
             if(sum<0)sum+=k;
             ans+=map.getOrDefault(sum,0);
-            System.out.println(sum);
+           // System.out.println(sum);
             map.put(sum,map.getOrDefault(sum,0)+1);
         }
         return ans;
