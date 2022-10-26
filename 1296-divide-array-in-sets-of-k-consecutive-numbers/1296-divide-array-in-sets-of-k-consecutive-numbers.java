@@ -1,6 +1,6 @@
 class Solution {
     public boolean isPossibleDivide(int[] nums, int k) {
-        PriorityQueue<Integer> pq=new PriorityQueue<>();
+      /*  PriorityQueue<Integer> pq=new PriorityQueue<>();
         
         for(int a:nums)pq.add(a);
         
@@ -13,6 +13,18 @@ class Solution {
             }
         }
         
+        return true;*/
+         Map<Integer,Integer> map=new TreeMap<>();
+        for(int a:nums)map.put(a,map.getOrDefault(a,0)+1);
+        
+        for(Integer it:map.keySet()){
+            if(map.get(it)>0){
+               for(int i=k-1;i>=0;--i) {
+                   if(map.getOrDefault(it+i,0)<map.get(it))return false;
+                   map.put(it+i,map.get(it+i)-map.get(it));
+               }
+            }
+        }
         return true;
     }
 }
