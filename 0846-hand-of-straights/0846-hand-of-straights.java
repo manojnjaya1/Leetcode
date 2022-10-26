@@ -1,6 +1,6 @@
 class Solution {
     public boolean isNStraightHand(int[] hand, int s) {
-        Map<Integer,Integer> map=new TreeMap<>();
+     /*   Map<Integer,Integer> map=new TreeMap<>();
         for(int a:hand)map.put(a,map.getOrDefault(a,0)+1);
         
         for(Integer it:map.keySet()){
@@ -11,6 +11,20 @@ class Solution {
                }
             }
         }
+        return true;*/
+         PriorityQueue<Integer> pq=new PriorityQueue<>();
+        
+        for(int a:hand)pq.add(a);
+        
+        while(!pq.isEmpty()){
+            int in=pq.poll();
+            
+            for(int i=1;i<s;i++){
+                if(pq.remove(in+i))continue;
+                else return false;
+            }
+        }
+        
         return true;
     }
 }
