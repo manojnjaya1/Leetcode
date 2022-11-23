@@ -7,7 +7,7 @@ class Solution {
                     if(!set.add("row"+i+board[i][j]) || !set.add("col"+j+board[i][j]))
                         return false;
                     
-                    if(!set.add("box"+((i/3)*3 +j/3)+board[i][j]))return false;
+                    if(!set.add("box"+i/3+(j/3)*3+board[i][j]))return false;
                 }
                 
                 
