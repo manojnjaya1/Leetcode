@@ -5,7 +5,7 @@ class Solution {
             count = s.charAt(i) == '1' ? count + 1 : 0;
             
             res = (res + count) % mod;
-            System.out.println(res+" "+count);
+           
         }
         return res;
     }
