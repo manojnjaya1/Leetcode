@@ -16,7 +16,7 @@ class Solution {
             }
             arr[c-'a']=i+1;
             
-            rslt=(rslt+cur);
+            rslt+=cur;
             
         }
         return rslt;
