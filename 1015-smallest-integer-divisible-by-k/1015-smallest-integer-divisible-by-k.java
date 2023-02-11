@@ -4,7 +4,7 @@ class Solution {
         int r = 0;
         for (int N = 1; N <= K; ++N) {
             r = (r * 10 + 1) % K;
-            System.out.println(r);
+            //System.out.println(r);
             if (r == 0) return N;
         }
         return -1;
