@@ -1,6 +1,6 @@
 class Solution {
     public int minSteps(String s, String t) {
-      Map<Character,Integer> m1=new HashMap<>();
+    /*  Map<Character,Integer> m1=new HashMap<>();
       Map<Character,Integer> m2=new HashMap<>();
 
         for(int i=0;i<s.length();i++){
@@ -21,6 +21,12 @@ class Solution {
         for(char c:m2.keySet()){
             ans+=m2.get(c);
         }
-        return ans;
+        return ans;*/
+        int ans = 0;
+    int[] sCounter = new int[26], tCounter = new int[26];
+    for(char ch: s.toCharArray()) sCounter[ch - 'a']++;
+    for(char ch: t.toCharArray()) tCounter[ch - 'a']++;
+    for (int i = 0; i < 26; i++) ans += Math.abs(sCounter[i] - tCounter[i]);
+    return ans;
     }
 }
