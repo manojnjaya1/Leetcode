@@ -1,18 +1,23 @@
 class SmallestInfiniteSet {
       TreeSet<Integer> st;
+    int cur=1;
    // PriorityQueue<Integer> pq;
     public SmallestInfiniteSet() {
         st=new TreeSet<>();
-        for(int i=1;i<=1000;i++)st.add(i);
+       
     }
     
     public int popSmallest() {
-       return st.pollFirst();
+       if(st.size()>0){
+           return st.pollFirst();
+       }else {
+           cur+=1;
+           return cur-1;
+       }
     }
     
     public void addBack(int num) {
-        if(!st.contains(num))
-        st.add(num);
+        if(cur>num)st.add(num);
     }
 }
 
