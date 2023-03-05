@@ -14,7 +14,9 @@ class Solution {
         int ans=0;
         
         while(!que.isEmpty()){
+           
             ans++;
+             System.out.println(ans);
             int m=que.size();
             for(int i=0;i<m;i++){
                 int j=que.poll();
