@@ -1,7 +1,7 @@
 class Solution {
     public List<List<Integer>> findWinners(int[][] matches) {
-         TreeMap<Integer,Integer> w=new TreeMap<>();
-        TreeMap<Integer,Integer> l=new TreeMap<>();
+         Map<Integer,Integer> w=new HashMap<>();
+        Map<Integer,Integer> l=new HashMap<>();
         int n=matches.length;
         
         ArrayList<List<Integer>> ans=new ArrayList<>();
@@ -25,6 +25,8 @@ class Solution {
                loose.add(k);
             }
         }
+        Collections.sort(win);
+        Collections.sort(loose);
         ans.add(win);
         ans.add(loose);
         return ans;
