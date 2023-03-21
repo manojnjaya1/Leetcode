@@ -7,15 +7,13 @@ class Solution {
         for(int i=0;i<n;i++){
             
             if(nums[i]==0){
-                count++;
+                ans++;
+                count+=ans;
             }else {
-                if(count!=0){
-                    ans+=(count*(count+1))/2;
-                    count=0;
+               ans=0;
                 }
             }
-        }
-        if(count>0)ans+=(count*(count+1))/2;
-        return ans;
+        
+        return count;
     }
 }
